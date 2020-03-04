@@ -131,7 +131,9 @@ static CGFloat CRCenterXForActivityIndicatorWithAlignment(CRToastAccessoryViewAl
     CGSize imageSize = self.imageView.image.size;
     CGFloat preferredPadding = self.toast.preferredPadding;
     
-    CGFloat statusBarYOffset = self.toast.displayUnderStatusBar ? (CRGetStatusBarHeight()+CRStatusBarViewUnderStatusBarYOffsetAdjustment) : 0;
+    // for iPhone X
+    CGFloat statusBarH = [UIApplication sharedApplication].statusBarFrame.size.height - 20;
+    CGFloat statusBarYOffset = self.toast.displayUnderStatusBar ? (CRGetStatusBarHeight()+CRStatusBarViewUnderStatusBarYOffsetAdjustment) : statusBarH;
     contentFrame.size.height = CGRectGetHeight(contentFrame) - statusBarYOffset;
     
     self.backgroundView.frame = self.bounds;

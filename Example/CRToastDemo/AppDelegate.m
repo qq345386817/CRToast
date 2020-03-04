@@ -14,7 +14,9 @@
                                         kCRToastFontKey             : [UIFont fontWithName:@"HelveticaNeue-Light" size:16],
                                         kCRToastTextColorKey        : [UIColor whiteColor],
                                         kCRToastBackgroundColorKey  : [UIColor orangeColor],
-                                        kCRToastAutorotateKey       : @(YES)}];
+                                        kCRToastAutorotateKey       : @(YES),
+                                        kCRToastUnderStatusBarKey   : @(NO)
+    }];
         
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
